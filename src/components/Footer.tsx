@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <img src="/logo.png" alt="Rumphi Honey" className="h-10 w-auto" />
+              <img src="/logo.png" alt="Rumphi Honey" className="h-14 w-auto" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight">
                   RUMPHI HONEY

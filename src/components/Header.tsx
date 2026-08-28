@@ -40,7 +40,7 @@ export default function Header() {
             }}
             className="flex items-center gap-3"
           >
-            <img src="/logo.png" alt="Rumphi Honey" className="h-12 w-auto" />
+            <img src="/logo.png" alt="Rumphi Honey" className="h-16 w-auto" />
             <div className="flex flex-col">
               <span className="text-xl font-bold text-amber-900 tracking-tight">
                 RUMPHI HONEY
