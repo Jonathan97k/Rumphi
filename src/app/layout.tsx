@@ -33,6 +33,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Rumphi Honey",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +51,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#d97706" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Rumphi Honey" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+      </head>
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased`}
       >

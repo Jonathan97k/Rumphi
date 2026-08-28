@@ -1,0 +1,36 @@
+{
+  "name": "Rumphi Honey",
+  "short_name": "Rumphi Honey",
+  "description": "100% Natural Honey from Rumphi, Malawi - Order via WhatsApp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffbeb",
+  "theme_color": "#d97706",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "food"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Shop Honey",
+      "short_name": "Shop",
+      "description": "View and order honey products",
+      "url": "/?shop=true",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Bulk Order",
+      "short_name": "Bulk",
+      "description": "Request wholesale quotation",
+      "url": "/?bulk=true",
+      "icons": [{ "src": "/logo.png", "sizes": "192x192" }]
+    }
+  ]
+}
