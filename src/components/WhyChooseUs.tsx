@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Leaf, Droplets, MapPin, Heart } from "lucide-react";
 
 const features = [
@@ -7,22 +8,29 @@ const features = [
     icon: Leaf,
     title: "100% NATURAL",
     description: "Naturally sourced honey from Rumphi.",
+    image: "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=400&h=300&fit=crop&crop=center",
+    alt: "Natural honey dripping from a honey dipper",
   },
   {
     icon: Droplets,
     title: "PURE & SIMPLE",
-    description:
-      "Honey presented with minimal processing claims only where appropriate.",
+    description: "Honey presented with minimal processing claims only where appropriate.",
+    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=300&fit=crop&crop=center",
+    alt: "Pure golden honey in a glass jar",
   },
   {
     icon: MapPin,
     title: "FROM RUMPHI",
     description: "Celebrating honey from one of Malawi's beautiful regions.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=400&h=300&fit=crop&crop=center",
+    alt: "Beautiful African landscape hills",
   },
   {
     icon: Heart,
     title: "PACKED WITH CARE",
     description: "Carefully prepared and packed for our customers.",
+    image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400&h=300&fit=crop&crop=center",
+    alt: "Honey jars carefully packed",
   },
 ];
 
@@ -45,15 +53,29 @@ export default function WhyChooseUs() {
             return (
               <div
                 key={feature.title}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-amber-100 hover:shadow-xl transition-shadow text-center"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg border border-amber-100 hover:shadow-xl transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <Icon className="w-8 h-8 text-amber-600" />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={feature.image}
+                    alt={feature.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-900/60 via-transparent to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-amber-900 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-amber-700 text-sm">{feature.description}</p>
+                <div className="p-6 text-center">
+                  <h3 className="text-lg font-bold text-amber-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-amber-700 text-sm">{feature.description}</p>
+                </div>
               </div>
             );
           })}
