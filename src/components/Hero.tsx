@@ -27,8 +27,23 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-10"
+          poster="/500g.png"
+        >
+          <source
+            src="https://assets.mixkit.co/videos/8596/8596-720.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/90 via-orange-50/90 to-yellow-50/90" />
         {/* Honeycomb pattern overlay */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -38,7 +53,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-center lg:text-left">
