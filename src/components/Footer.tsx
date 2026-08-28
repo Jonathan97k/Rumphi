@@ -25,14 +25,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="mb-6">
-              <span className="text-2xl font-bold tracking-tight">
-                RUMPHI HONEY
-              </span>
-              <br />
-              <span className="text-sm text-amber-400 tracking-widest">
-                100% NATURAL
-              </span>
+            <div className="mb-6 flex items-center gap-3">
+              <img src="/logo.png" alt="Rumphi Honey" className="h-10 w-auto" />
+              <div className="flex flex-col">
+                <span className="text-xl font-bold tracking-tight">
+                  RUMPHI HONEY
+                </span>
+                <span className="text-sm text-amber-400 tracking-widest">
+                  100% NATURAL
+                </span>
+              </div>
             </div>
             <p className="text-amber-300/80 mb-6">
               Premium natural honey sourced from Rumphi, Malawi.

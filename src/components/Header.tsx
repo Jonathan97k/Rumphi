@@ -51,14 +51,17 @@ export default function Header() {
               e.preventDefault();
               handleNavClick("#home");
             }}
-            className="flex flex-col"
+            className="flex items-center gap-3"
           >
-            <span className="text-2xl font-bold text-amber-900 tracking-tight">
-              RUMPHI HONEY
-            </span>
-            <span className="text-xs text-amber-700 tracking-widest">
-              100% NATURAL
-            </span>
+            <img src="/logo.png" alt="Rumphi Honey" className="h-12 w-auto" />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-amber-900 tracking-tight">
+                RUMPHI HONEY
+              </span>
+              <span className="text-xs text-amber-700 tracking-widest">
+                100% NATURAL
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
