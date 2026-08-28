@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Plus, Minus, ShoppingCart } from "lucide-react";
 import { Product } from "@/lib/data";
 import { useCart } from "@/lib/cart-context";
@@ -13,18 +14,19 @@ export default function ProductCard({ product }: ProductCardProps) {
   const cartItem = items.find((item) => item.product.id === product.id);
   const quantity = cartItem?.quantity || 0;
 
+  const imagePath = product.id === "250g" ? "/250g.png" : "/500g.png";
+
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-amber-100 hover:shadow-xl transition-shadow">
       {/* Product Image */}
-      <div className="relative h-64 bg-gradient-to-br from-amber-100 to-amber-200">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-24 h-32 mx-auto mb-3 bg-gradient-to-b from-amber-300 to-amber-500 rounded-xl shadow-inner" />
-            <p className="text-amber-700 font-medium text-sm">
-              {product.size} Jar
-            </p>
-          </div>
-        </div>
+      <div className="relative h-64 bg-amber-50">
+        <Image
+          src={imagePath}
+          alt={`${product.size} Rumphi Honey`}
+          fill
+          className="object-cover p-6"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
         <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold">
           {product.size}
         </div>

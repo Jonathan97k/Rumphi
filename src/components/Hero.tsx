@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowDown, Droplets, Leaf, MapPin } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { products } from "@/lib/data";
@@ -116,35 +117,36 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Product Image */}
+          {/* Product Images */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-80 h-96 md:w-96 md:h-[480px]">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-orange-500/20 rounded-3xl blur-3xl" />
-
-              {/* Image container */}
-              <div className="relative w-full h-full bg-gradient-to-br from-amber-100 to-amber-200 rounded-3xl overflow-hidden shadow-2xl">
-                {/* Placeholder for honey jar */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-40 mx-auto mb-4 bg-gradient-to-b from-amber-300 to-amber-500 rounded-2xl shadow-inner" />
-                    <p className="text-amber-700 font-medium">
-                      Premium Honey Jar
-                    </p>
-                    <p className="text-amber-600 text-sm">
-                      Replace with actual product image
-                    </p>
-                  </div>
+            <div className="relative w-full max-w-md">
+              {/* 500g jar - back larger */}
+              <div className="relative w-72 h-80 md:w-80 md:h-96">
+                <Image
+                  src="/500g.png"
+                  alt="500g Rumphi Honey"
+                  fill
+                  className="object-cover rounded-2xl shadow-2xl"
+                  priority
+                />
+                <div className="absolute -bottom-6 -left-6 bg-white px-4 py-2 rounded-full shadow-lg">
+                  <span className="text-amber-900 font-bold">K10,000</span>
+                  <span className="text-amber-600 text-sm ml-1">500g</span>
                 </div>
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute -top-4 -right-4 bg-red-600 text-white px-4 py-2 rounded-full font-bold shadow-lg">
-                100% Natural
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-full shadow-lg">
-                <span className="text-amber-900 font-bold">K5,000</span>
-                <span className="text-amber-600 text-sm ml-1">250g</span>
+              {/* 250g jar - front smaller */}
+              <div className="absolute bottom-8 right-8 md:bottom-4 md:right-4 w-52 h-64 md:w-60 md:h-72">
+                <Image
+                  src="/250g.png"
+                  alt="250g Rumphi Honey"
+                  fill
+                  className="object-cover rounded-2xl shadow-2xl"
+                  priority
+                />
+                <div className="absolute -top-3 -right-3 bg-red-600 text-white px-3 py-1 rounded-full font-bold shadow-lg text-sm">
+                  100% Natural
+                </div>
               </div>
             </div>
           </div>

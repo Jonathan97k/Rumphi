@@ -1,35 +1,17 @@
 "use client";
 
+import Image from "next/image";
+
 const galleryItems = [
   {
-    title: "Honey Jar",
-    description: "Our premium honey product",
-    color: "from-amber-200 to-amber-300",
+    title: "500g Jar",
+    description: "Our premium 500g honey jar",
+    image: "/500g.png",
   },
   {
-    title: "Honeycomb",
-    description: "Natural honeycomb from the hive",
-    color: "from-amber-300 to-orange-300",
-  },
-  {
-    title: "Pure Honey",
-    description: "Golden honey being poured",
-    color: "from-amber-400 to-yellow-300",
-  },
-  {
-    title: "Honey Dipper",
-    description: "Traditional honey dipper",
-    color: "from-amber-200 to-amber-400",
-  },
-  {
-    title: "Bees at Work",
-    description: "Our busy pollinators",
-    color: "from-yellow-200 to-amber-300",
-  },
-  {
-    title: "Natural Landscape",
-    description: "Rumphi, Malawi",
-    color: "from-green-200 to-amber-200",
+    title: "250g Jar",
+    description: "Perfect 250g size for everyday use",
+    image: "/250g.png",
   },
 ];
 
@@ -46,34 +28,30 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className={`relative aspect-square bg-gradient-to-br ${item.color} rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group cursor-pointer`}
+              className="relative aspect-[3/4] bg-amber-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-2 bg-white/30 rounded-full" />
-                  <p className="text-amber-900 font-medium text-sm">
-                    {item.title}
-                  </p>
-                  <p className="text-amber-700 text-xs">{item.description}</p>
-                </div>
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-amber-900/0 group-hover:bg-amber-900/20 transition-colors flex items-center justify-center">
-                <span className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                  {item.title}
-                </span>
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover p-4 transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-900/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                <p className="text-amber-100">{item.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         <p className="text-center text-amber-600 text-sm mt-6">
-          Replace placeholders with actual photography
+          Premium honey from Rumphi, Malawi
         </p>
       </div>
     </section>
