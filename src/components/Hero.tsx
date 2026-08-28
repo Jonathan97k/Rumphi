@@ -38,7 +38,7 @@ export default function Hero() {
           poster="/500g.png"
         >
           <source
-            src="https://assets.mixkit.co/videos/8596/8596-720.mp4"
+            src="/bees-video.mp4"
             type="video/mp4"
           />
         </video>
